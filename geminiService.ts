@@ -15,7 +15,11 @@ export const getMealRecommendation = async (
     ? ` within the price range of ${minPrice || '0'} to ${maxPrice || 'any'} KRW` 
     : '';
 
-  const prompt = `Recommend a specific ${time} meal from the category "${category}"${priceRange}. 
+  const categoryText = category === '전체' 
+    ? 'any category (Korean, Chinese, Japanese, Western, Mexican, or any other cuisine)' 
+    : `the category "${category}"`;
+
+  const prompt = `Recommend a specific ${time} meal from ${categoryText}${priceRange}. 
   Provide a short, fun, and appetizing reason why it matches the time and category. 
   DO NOT mention hexadecimal color codes, the word "hex", or specific color names (like ${segmentColor}) in your response. 
   Focus only on the flavor, vibe, and suitability for the chosen time.

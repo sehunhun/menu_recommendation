@@ -9,7 +9,7 @@ import { Clock, Sun, Sunset, Moon, Loader2, Sparkles, ChevronRight, Utensils, Co
 
 const App: React.FC = () => {
   const [timeOfDay, setTimeOfDay] = useState<TimeOfDay>(TimeOfDay.MORNING);
-  const [category, setCategory] = useState<Category>(Category.KOREAN);
+  const [category, setCategory] = useState<Category>(Category.ALL);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   
@@ -70,6 +70,7 @@ const App: React.FC = () => {
           
           <div className={`overflow-hidden transition-all duration-300 ${activePanel === 'category' ? 'max-h-60 mt-3 opacity-100' : 'max-h-0 opacity-0'}`}>
             <div className="grid grid-cols-2 gap-2">
+              <SelectionItem active={category === Category.ALL} onClick={() => setCategory(Category.ALL)} label="전체" icon={<span className="text-lg">🌍</span>} />
               <SelectionItem active={category === Category.KOREAN} onClick={() => setCategory(Category.KOREAN)} label="한식" icon={<span className="text-lg">🇰🇷</span>} />
               <SelectionItem active={category === Category.CHINESE} onClick={() => setCategory(Category.CHINESE)} label="중식" icon={<span className="text-lg">🇨🇳</span>} />
               <SelectionItem active={category === Category.JAPANESE} onClick={() => setCategory(Category.JAPANESE)} label="일식" icon={<span className="text-lg">🇯🇵</span>} />

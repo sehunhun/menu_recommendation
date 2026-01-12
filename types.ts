@@ -7,6 +7,7 @@ export enum TimeOfDay {
 }
 
 export enum Category {
+  ALL = '전체',
   KOREAN = '한식',
   CHINESE = '중식',
   JAPANESE = '일식',
