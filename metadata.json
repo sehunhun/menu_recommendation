@@ -1,0 +1,5 @@
+
+{
+  "name": "Celestial Meal Wheel",
+  "description": "An interactive spinning wheel application that changes its environment (Sun/Moon/Sky) based on the time of day and provides AI-powered meal suggestions using Gemini."
+}
